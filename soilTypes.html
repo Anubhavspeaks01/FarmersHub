@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmers Hub</title>
+    <link rel="stylesheet" href="CSS/main.css">
+    <style>
+        body { background: #111; color: #fff; font-family: 'Arial', sans-serif; }
+        .container { text-align: center; padding: 20px; }
+        .title { font-size: 3rem; margin-bottom: 20px; color: #ffa500; text-transform: uppercase; }
+        .soil-list { display: flex; justify-content: space-around; flex-wrap: wrap; margin-bottom: 30px; }
+        .soil { background-color: #333; padding: 20px 30px; border-radius: 10px; cursor: pointer; transition: transform 0.3s; margin: 10px; width: 200px; }
+        .soil:hover { transform: scale(1.1); background-color: #ffa500; }
+        .soil h2 { font-size: 1.6rem; margin-bottom: 10px; }
+        .soil img { width: 100%; border-radius: 8px; }
+        .crops-display { padding: 20px; border-radius: 10px; background: #222; box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.7); display: none; text-align: left; margin-top: 20px; }
+        .crops-display h3 { font-size: 2rem; margin-bottom: 10px; }
+        .crops-display ul { list-style-type: none; }
+        .crops-display ul li { font-size: 1.5rem; margin: 5px 0; }
+        .crops-display canvas { max-width: 100%; border-radius: 8px; }
+      </style>
+</head>
+<body>
+    <header class="link" >
+        <!-- The Code for the Header Starts here  -->
+            <nav>
+                <!-- <div class="logo">
+                    <img src="logo-removebg-preview.png" height="25px" alt="Logo">
+                </div> -->
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="climate.html">Climate</a></li>
+                    <li><a href="soilTypes.html">Soil Types</a></li>
+                    <li><a href="GlobalTrends.html">Global Trends</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+    </header>
+
+    <div class="container">
+        <h1 class="title">Soil Types & Their Crops</h1>
+        <div class="soil-list">
+          <div class="soil" onclick="showCrops('clay')">
+            <h2>Clay Soil</h2>
+            <img src="img/image.png" alt="Clay Soil">
+          </div>
+          <div class="soil" onclick="showCrops('sand')">
+            <h2>Sandy Soil</h2>
+            <img src="img/image2.jpg" alt="Sandy Soil">
+          </div>
+          <div class="soil" onclick="showCrops('loam')">
+            <h2>Loamy Soil</h2>
+            <img src="img/image3.jpg" alt="Loamy Soil">
+          </div>
+          <div class="soil" onclick="showCrops('peat')">
+            <h2>Peat Soil</h2>
+            <img src="img/image4.jpg" alt="Peat Soil">
+          </div>
+          <div class="soil" onclick="showCrops('chalk')">
+            <h2>Chalk Soil</h2>
+            <img src="img/image5.jpg" alt="Chalk Soil">
+          </div>
+          <div class="soil" onclick="showCrops('silt')">
+            <h2>Silt Soil</h2>
+            <img src="img/image6.jpg" alt="Silt Soil">
+          </div>
+          <div class="soil" onclick="showCrops('saline')">
+            <h2>Saline Soil</h2>
+            <img src="img/image7.jpg" alt="Saline Soil">
+          </div>
+          <div class="soil" onclick="showCrops('alluvial')">
+            <h2>Alluvial Soil</h2>
+            <img src="img/image8.jpg" alt="Alluvial Soil">
+          </div>
+          <div class="soil" onclick="showCrops('black')">
+            <h2>Black Soil</h2>
+            <img src="img/image9.jpg" alt="Black Soil">
+          </div>
+        </div>
+        <div id="crops-display" class="crops-display"></div>
+      </div>
+      <script>
+        function showCrops(soilType) {
+          let crops = [];
+          let chartData = {};
+          if (soilType === 'clay') {
+            crops = ['Rice', 'Wheat', 'Barley'];
+            chartData = { 'Rice': 40, 'Wheat': 35, 'Barley': 25 };
+          } else if (soilType === 'sand') {
+            crops = ['Carrots', 'Potatoes', 'Peppers'];
+            chartData = { 'Carrots': 30, 'Potatoes': 40, 'Peppers': 30 };
+          } else if (soilType === 'loam') {
+            crops = ['Tomatoes', 'Lettuce', 'Corn'];
+            chartData = { 'Tomatoes': 50, 'Lettuce': 30, 'Corn': 20 };
+          } else if (soilType === 'peat') {
+            crops = ['Cranberries', 'Blueberries', 'Potatoes'];
+            chartData = { 'Cranberries': 35, 'Blueberries': 40, 'Potatoes': 25 };
+          } else if (soilType === 'chalk') {
+            crops = ['Cabbage', 'Cauliflower', 'Spinach'];
+            chartData = { 'Cabbage': 45, 'Cauliflower': 35, 'Spinach': 20 };
+          } else if (soilType === 'silt') {
+            crops = ['Lettuce', 'Beans', 'Cabbage'];
+            chartData = { 'Lettuce': 40, 'Beans': 30, 'Cabbage': 30 };
+          } else if (soilType === 'saline') {
+            crops = ['Barley', 'Cotton', 'Sugar Beet'];
+            chartData = { 'Barley': 40, 'Cotton': 35, 'Sugar Beet': 25 };
+          } else if (soilType === 'alluvial') {
+            crops = ['Rice', 'Wheat', 'Maize'];
+            chartData = { 'Rice': 45, 'Wheat': 35, 'Maize': 20 };
+          } else if (soilType === 'black') {
+            crops = ['Cotton', 'Soybean', 'Peanuts'];
+            chartData = { 'Cotton': 50, 'Soybean': 30, 'Peanuts': 20 };
+          }
+          
+          const display = document.getElementById('crops-display');
+          display.style.display = 'block';
+          display.innerHTML = `<h3>Crops for ${soilType.charAt(0).toUpperCase() + soilType.slice(1)} Soil</h3><ul>${crops.map(crop => `<li>${crop}</li>`).join('')}</ul><canvas id="cropChart" width="400" height="300"></canvas>`;
+    
+          const ctx = document.getElementById('cropChart').getContext('2d');
+          const labels = Object.keys(chartData);
+          const data = Object.values(chartData);
+    
+          new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: labels,
+              datasets: [{
+                label: 'Crop Percentage',
+                data: data,
+                backgroundColor: ['#ff6347', '#ffcc00', '#32cd32'],
+                borderColor: ['#ff6347', '#ffcc00', '#32cd32'],
+                borderWidth: 1
+              }]
+            },
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: true
+                }
+              }
+            }
+          });
+        }
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</body>
+</html>

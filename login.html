@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login form</title>
+  <link rel="stylesheet" href="CSS/login.css">
+  <style>
+    header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap:20px;
+    padding: 20px;
+    background: #2c6e49 ;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   
+}
+
+.logo{
+    margin: 0;
+    padding: 0;
+
+}
+.logo img {
+    width: 120px;
+    height: auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #8D6E63;
+}
+
+  </style>
+
+</head>
+<body>
+  <header class="link" >
+    <!-- The Code for the Header Starts here  -->
+        <nav>
+            <!-- <div class="logo">
+                <img src="logo-removebg-preview.png" height="25px" alt="Logo">
+            </div> -->
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="climate.html">Climate</a></li>
+                <li><a href="soilTypes.html">Soil Types</a></li>
+                <li><a href="GlobalTrends.html">Global Trends</a></li>
+                <li><a href="signUp.html">SignUp</a></li>
+            </ul>
+        </nav>
+</header>
+
+<section>
+  <div class="form-box">
+    <div class="form-value">
+      <form action="">
+        <h2>Login</h2>
+        <div class="inputbox">
+          <ion-icon name="mail-outline"></ion-icon>
+          <input type="email" required>
+          <label for="">Email</label>
+        </div>
+        <div class="inputbox">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <input type="password" required>
+          <label for="">Password</label>
+        </div>
+        <div class="forget">
+          <label>
+            <input type="checkbox"> Remember me
+          </label>
+          <label>
+            <a href="#">Forgot password?</a>
+          </label>
+        </div>
+        <button>Log in</button>
+        <div class="register">
+          <p>Don't have a account ? <a href="signUp.html">Sign up</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+</body>
+</html>
